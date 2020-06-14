@@ -16,6 +16,8 @@ router.get('/showHabits',home_controller.showHabits);
 router.post('/delHabits',home_controller.delHabits)
 router.post('/delAll',home_controller.delAll)
 
+router.use('/habits', require('./habits'));
+
 
 //exporting router
 module.exports=router;

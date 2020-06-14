@@ -30,7 +30,7 @@ function displayonpage(data)
     $('#habitscontainer').prepend(`<div id='habitbox'>
     <div id="discbox">
         <input class="form-check-input" type="checkbox" value="${data._id}" id="defaultCheck1">
-        <label class="form-check-label strikethrough" for="defaultCheck1"><a href="">${data.name}</a></label>
+        <label class="form-check-label strikethrough" for="defaultCheck1"><a href="/habits?id=${data._id}">${data.name}</a></label>
     </div>`);
 }
 
