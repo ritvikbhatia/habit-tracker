@@ -37,7 +37,7 @@ var habitSchema = new Schema({
     timestamps:true
 });
 
-var habits = mongoose.model('Habits', habitsSchema );
+var Habits = mongoose.model('Habits', habitSchema );
 
 //exporting habits module
 module.exports=Habits;

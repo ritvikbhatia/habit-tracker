@@ -1,8 +1,7 @@
 /* **********************************************************************************/
 //Require modules
 
-const Tasks=require('../models/tasks');
-const User=require('../models/user');
+const Habits=require('../models/habits');
 
 
 /* **********************************************************************************/
@@ -14,15 +13,15 @@ module.exports.home=function(req,res){
 
 
 /* **********************************************************************************/
-//adding  tasks to db
+//adding  habits to db
 
-module.exports.add=async function(req,res){
-    let task=await Tasks.create(req.body);
+module.exports.addhabit=async function(req,res){
+    let habit=await Habits.create(req.body);
     if(req.xhr)
     {
         // req.flash('success', 'Task Updated');
         res.status(200).json({
-            data:task,
+            data:habit,
             message:"success xhr"
         })
     }
@@ -33,13 +32,13 @@ module.exports.add=async function(req,res){
 /* **********************************************************************************/
 //Displaying tasks
 
-module.exports.showTasks=async function(req,res){
+module.exports.showHabits=async function(req,res){
     
-    let tasks= await Tasks.find({"user":req.user._id});
+    let habits= await Habits.find({});
     if(req.xhr)
     {
         res.status(200).json({
-            data:tasks,
+            data:habits,
             message:"success xhr"
         })
     }
@@ -48,20 +47,20 @@ module.exports.showTasks=async function(req,res){
 
 
 /* **********************************************************************************/
-//Deleting Tasks from the database
+//Deleting Habits from the database
 
-module.exports.delTasks=async function(req,res){
+module.exports.delHabits=async function(req,res){
 
     for(let i of req.body.del)
     {
-        await Tasks.findByIdAndDelete(i);
+        await Habits.findByIdAndDelete(i);
     }
-    let tasks= await Tasks.find({"user":req.user._id});
+    let habits= await Habits.find({});
     if(req.xhr)
     {
         
         res.status(200).json({
-            data:tasks,
+            data:habits,
             message:"success xhr"
         })
     }
@@ -73,7 +72,7 @@ module.exports.delTasks=async function(req,res){
 
 module.exports.delAll=async function(req,res){
 
-    await Tasks.deleteMany({"user":req.user._id});
+    await Habits.deleteMany({});
     if(req.xhr)
     {
         res.status(200).json({
@@ -81,72 +80,4 @@ module.exports.delAll=async function(req,res){
         })
     }
     return;
-}
-
-
-/* **********************************************************************************/
-//render signup page
-
-module.exports.signup=function(req,res){
-    return res.render('user_sign_up.ejs');
-}
-
-
-/* **********************************************************************************/
-//render signin page
-
-module.exports.signin=function(req,res){
-    return res.render('user_sign_in.ejs');
-}
-
-
-/* **********************************************************************************/
-// get the sign up data and create account
-
-module.exports.create = function(req, res){
-    if (req.body.password != req.body.confirm_password){
-        req.flash('error', 'Passwords do not match');
-        return res.redirect('back');
-    }
-
-    User.findOne({email: req.body.email}, function(err, user){
-        if(err){req.flash('error', err); return}
-
-        if (!user){
-            User.create(req.body, function(err, user){
-                if(err){req.flash('error', err); return}
-                return res.redirect('/signin');
-            })
-        }else{
-            req.flash('success', 'You have signed up, login to continue!');
-            return res.redirect('/');
-        }
-
-    });
-}
-
-
-/* **********************************************************************************/
-// sign in and create a session for the user
-
-module.exports.createSession = function(req, res){
-    req.flash('success', 'Logged in Successfully');
-    return res.redirect('/');
-}
-
-
-/* **********************************************************************************/
-//signout and destroy session
-
-module.exports.destroySession = function(req, res){
-    req.logout();
-    req.flash('success', 'You have logged out!');
-    return res.redirect('/');
-}
-
-
-/* **********************************************************************************/
-
-module.exports.addhabit=function(req,res){
-    console.log("success");
 }

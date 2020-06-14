@@ -1,15 +1,9 @@
 #mainForm {
   width: 80vw;
+  text-align: center;
   margin-left: 10vw;
   padding: 1%;
   border: 2px solid black; }
-  #mainForm #description {
-    width: 100%;
-    height: 45px;
-    font-size: large; }
-  #mainForm #date {
-    width: 100%;
-    height: 45px; }
   #mainForm #buttons {
     display: flex;
     padding: 2%;
@@ -21,24 +15,24 @@
     font-weight: bold;
     margin: 1%; }
 
-#taskbox {
+#habitbox {
   margin: 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly; }
-  #taskbox div {
+  #habitbox div {
     width: 30%; }
-    #taskbox div span {
+    #habitbox div span {
       background-color: pink;
       padding: 2%; }
-  #taskbox #discbox {
+  #habitbox #discbox {
     width: 90%;
     margin-left: 10%; }
-    #taskbox #discbox label {
+    #habitbox #discbox label {
       font-size: x-large;
       width: auto;
       overflow: visible; }
-    #taskbox #discbox .form-check-label {
+    #habitbox #discbox .form-check-label {
       width: 400%; }
-  #taskbox input[type=checkbox]:checked + label.strikethrough {
+  #habitbox input[type=checkbox]:checked + label.strikethrough {
     text-decoration: line-through; }

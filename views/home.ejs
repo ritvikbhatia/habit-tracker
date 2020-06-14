@@ -3,7 +3,11 @@
     <h2>add a new habit</h2>
     <form action="" method="POST" id="habitform">
         <input type="text" placeholder="Enter the habit name" name="name">
-        <button type="submit"> Create</button>
+        <div id="buttons">
+            <button type="submit" id="addhabit" class="btn btn-dark"><i class="fas fa-plus"></i> Add Habit</button>                    
+            <button type="button" id='delhabit' class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete Selected</button>
+            <button type="button" id='delAll' class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete All</button>
+        </div>
     </form>
     <div id="habitscontainer">
 
