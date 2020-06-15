@@ -1,17 +1,17 @@
-#mainForm {
+#habitform {
   width: 80vw;
   text-align: center;
   margin-left: 10vw;
   padding: 1%;
   border: 2px solid black; }
-  #mainForm #buttons {
+  #habitform #buttons {
     display: flex;
     padding: 2%;
     justify-content: center; }
-    #mainForm #buttons button {
+    #habitform #buttons button {
       margin-left: 2%;
       margin-right: 2%; }
-  #mainForm label {
+  #habitform label {
     font-weight: bold;
     margin: 1%; }
 

@@ -1,6 +1,6 @@
 {
    /* **********************************************************************************/
-//Add Task function 
+//Add habit function 
 
 let addhabit=function(){
     let newform=$('#habitform');
