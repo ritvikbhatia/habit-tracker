@@ -19,23 +19,23 @@ var habitSchema = new Schema({
       type:String,
       default: 'a'
     },
-    wednesday:{
+    Wednesday:{
       type:String,
       default: 'a'
     },
-    thursay:{
+    Thursday:{
       type:String,
       default: 'a'
     },
-    friday:{
+    Friday:{
       type:String,
       default: 'a'
     },
-    saturday:{
+    Saturday:{
       type:String,
       default: 'a'
     },
-    sunday:{
+    Sunday:{
       type:String,
       default: 'a'
     }

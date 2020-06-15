@@ -18,13 +18,19 @@
                         },
                         success:  function(data){
                             // console.log(thisbox);
+                            if(data.data=='a')
+                            {
+                                $(thisbox).empty();
+                            }
                             if(data.data=='b')
                             {
-                                $(thisbox).append("hi")
+                                $(thisbox).empty()
+                                $(thisbox).append('<i class="fas fa-check"></i>')
                             }
                             if(data.data=='c')
                             {
-                                $(thisbox).append('bye');
+                                $(thisbox).empty();
+                                $(thisbox).append('<i class="fas fa-times"></i>');
                             }
         
                         }, error: function(error){
