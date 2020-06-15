@@ -44,10 +44,10 @@ let showHabits=function(){
             type: 'get',
                 url: '/showHabits',
                 success:  function(data){
-                    console.log(data.data);
+                    // console.log(data.data);
                     for(let i of data.data)
                         {
-                            console.log(i);
+                            // console.log(i);
                              displayonpage(i);
                         }
 
