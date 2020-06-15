@@ -16,14 +16,10 @@ module.exports.home=async function(req,res){
 }
 
 module.exports.getval=async function(req,res){
-    // var day= req.query.day;
-    // let habit=await Habits.find({name:req.body.a});
     if(req.xhr)
     {
         hid=req.body.a;
         day=req.body.day;
-        console.log(day,"Monday");
-        console.log(day==='Monday');
         let habit=await Habits.findById(hid);
         if(habit[day]=='a')
             habit[day]='b';
@@ -32,6 +28,19 @@ module.exports.getval=async function(req,res){
         else if(habit[day]=='c')
             habit[day]='a';
         habit.save();
+        res.status(200).json({
+            data:habit[day],
+            message:"success xhr"
+        })
+    }
+}
+module.exports.show=async function(req,res){
+    if(req.xhr)
+    {
+        hid=req.body.a;
+        day=req.body.day;
+        let habit=await Habits.findById(hid);
+        // console.log(habit)
         res.status(200).json({
             data:habit[day],
             message:"success xhr"

@@ -79,7 +79,7 @@ function deleteHabits(){
                     url: '/delHabits',
                     success: async function(data){
                         console.log(data.data);
-                        $('#Habitscontainer').empty();
+                        $('#habitscontainer').empty();
                         for(let i of data.data)
                             {
                                 console.log(i);
@@ -105,7 +105,7 @@ function deleteAll(){
                 type: 'post',
                     url: '/delAll',
                     success: async function(){
-                        $('#Habitscontainer').empty(); 
+                        $('#habitscontainer').empty(); 
     
                     }, error: function(error){
                         console.log(error.responseText);

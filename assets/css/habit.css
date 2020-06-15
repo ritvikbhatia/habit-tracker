@@ -3,4 +3,11 @@
   #calender div {
     height: 10vw;
     width: 10vw;
-    border: dashed 2px black; }
+    border: dashed 2px black;
+    font-size: 550%;
+    text-align: center; }
+
+#names {
+  display: flex; }
+  #names span {
+    width: 10vw; }
